@@ -24,4 +24,14 @@ public class UserServiceImp implements UserService {
         user.setAge(age);
         users.add(user);
     }
+
+    @Override
+    public User getUser(String name) {
+        for (User user : users) {
+            if (user.getName().equals(name)) {
+                return user;
+            }
+        }
+        return null;
+    }
 }
